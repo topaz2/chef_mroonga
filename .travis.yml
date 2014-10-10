@@ -12,3 +12,6 @@ notifications:
   email:
     on_success: never  # default: change
     on_failure: always # default: always
+env:
+  global:
+    secure: QKAiCcofimHjpOI/RdMpNXFCr8+WJfZM6lIeBQfIB1vKWUnZu6AjEPvhGzewr//3D8bpqeGU8Gr1hecVLqHcKcRKs/1RdRzZocxjLbRNRgD34aMf3PfR5HHfEAWeTVjtu+Ypq+AO64olhsTfS28VgY3nRj+XtEVHPfZpS5uogHU=

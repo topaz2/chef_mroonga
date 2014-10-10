@@ -12,6 +12,7 @@ group :unit do
   gem 'berkshelf', '>= 3.1'
   gem 'chefspec'
   gem 'knife-spec'
+  gem 'coveralls', require: false
 end
 
 group :kitchen_common do

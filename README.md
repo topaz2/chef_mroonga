@@ -4,7 +4,6 @@ Installs/Configures mroonga
 
 [![Build Status](https://travis-ci.org/topaz2/chef_mroonga.png?branch=master)](https://travis-ci.org/topaz2/chef_mroonga)
 [![Dependency Status](https://gemnasium.com/topaz2/chef_mroonga.png)](https://gemnasium.com/topaz2/chef_mroonga)
-[![Code Climate](https://codeclimate.com/github/topaz2/chef_mroonga.png)](https://codeclimate.com/github/topaz2/chef_mroonga)
 [![Coverage Status](https://coveralls.io/repos/topaz2/chef_mroonga/badge.png?branch=master)](https://coveralls.io/r/topaz2/chef_mroonga)
 
 Requirements
