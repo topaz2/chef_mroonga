@@ -1,7 +1,7 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-guard 'kitchen' do
+guard 'kitchen', all_on_start: false do
   watch(/test\/.+/)
   watch(/^recipes\/(.+)\.rb$/)
   watch(/^attributes\/(.+)\.rb$/)
@@ -27,9 +27,9 @@ guard 'rubocop', all_on_start: false do
   watch('metadata.rb')
 end
 
-guard :rspec, cmd: 'bundle exec rspec', all_on_start: false, notification: false do
+guard :rspec, cmd: 'bundle ex rspec', all_on_start: false, notification: false do
   watch(/^libraries\/(.+)\.rb$/)
   watch(/^spec\/(.+)_spec\.rb$/)
   watch(/^(recipes)\/(.+)\.rb$/)   { |m| "spec/#{m[1]}_spec.rb" }
-  watch('spec/spec_helper.rb')      { 'spec' }
+  watch('spec/spec_helper.rb')     { 'spec' }
 end
