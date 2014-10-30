@@ -24,14 +24,13 @@ when 'debian'
     uri 'http://packages.groonga.org/debian/'
     components ["#{node[:lsb][:codename]} main"]
     not_if { ::File.exist?("/etc/apt/sources.list.d/mroonga-#{node[:lsb][:codename]}.list") }
-    notifies :run, 'execute[apt-get-update]', :immediately
   end
   package 'groonga-keyring' do
-    options '-y --allow-unauthenticated'
+    options '--allow-unauthenticated'
   end
   %w( mysql-server-mroonga groonga-tokenizer-mecab ).each do |p|
     package p do
-      options '-y --force-yes'
+      options '--force-yes'
     end
   end
 when 'ubuntu'
@@ -42,9 +41,11 @@ when 'ubuntu'
     uri 'http://security.ubuntu.com/ubuntu'
     components ["#{node[:lsb][:codename]}-security main restricted"]
     not_if { ::File.exist?("/etc/apt/sources.list.d/mroonga-#{node[:lsb][:codename]}.list") }
-    notifies :run, 'execute[apt-get-update]', :immediately
   end
-  ppa 'groonga/ppa'
+  apt_repository 'groonga' do
+    uri 'ppa:groonga/ppa'
+    distribution node[:lsb][:codename]
+  end
   %w( mysql-server-mroonga groonga-tokenizer-mecab ).each do |p|
     package p
   end
