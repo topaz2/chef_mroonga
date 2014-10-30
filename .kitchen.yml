@@ -12,13 +12,11 @@ platforms:
   - name: ubuntu-12.04
     run_list:
       - recipe[apt]
-      - recipe[apt-repo]
   - name: ubuntu-14.04
     run_list:
       - recipe[apt]
-      - recipe[apt-repo]
 
 suites:
-  - name: mroonga
+  - name: default
     run_list:
       - recipe[mroonga]
